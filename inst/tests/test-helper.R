@@ -169,6 +169,6 @@ test_that("Rule profiling works",{
 context("Testing: pkg.version")
 
 test_that("Access works",{
-  expect_that( pkg.version("datacheck") == "1.0.0", is_true() )
+  expect_that( pkg.version("datacheck") == "1.0.2", is_true() )
 })
 

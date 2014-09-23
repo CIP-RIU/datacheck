@@ -1,0 +1,13 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+MD5
+.git
+^datacheck.Rproj
+^\.git
+^\.Rhistory
+^\.gitignore
+^\.Rproj.user
+tests
+inst/tests
+build
+vignettes/figure

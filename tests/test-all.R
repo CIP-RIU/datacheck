@@ -1,4 +1,4 @@
 library(testthat)
-library(datacheck)
+#library(datacheck)
 
 test_package("datacheck")
