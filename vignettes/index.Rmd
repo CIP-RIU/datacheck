@@ -1,5 +1,5 @@
 ---
-title: "{A Vignette for datacheck package "
+title: "A Vignette for datacheck package"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteEngine{knitr::knitr}

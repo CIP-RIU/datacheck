@@ -9,3 +9,5 @@ MD5
 ^\.Rproj.user
 tests
 inst/tests
+vignettes
+build

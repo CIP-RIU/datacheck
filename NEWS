@@ -1,8 +1,14 @@
-datacheck 1.0.4
+datacheck 1.0.6
+==============
+* Reworked vignette to doc
+* Removed dependencies on knitr and xtable
+
+datacheck 1.0.5
 ==============
 * Maintainance version
 * fixed several bugs
 * Removed the tests from the distribution
+
 
 datacheck 1.0.0
 ===============
