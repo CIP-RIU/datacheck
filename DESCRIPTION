@@ -1,7 +1,7 @@
 Package: datacheck
 Type: Package
 Title: Tools for checking data consistency
-Version: 1.0.4
+Version: 1.0.5
 Date: 2013-09-23
 Author: Reinhard Simon
 Maintainer: "Simon, Reinhard (CIP)" <R.SIMON@CGIAR.ORG>

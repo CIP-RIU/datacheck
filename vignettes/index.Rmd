@@ -1,7 +1,11 @@
-<!--
-%\VignetteEngine{knitr}
-%\VignetteIndexEntry{A Vignette for datacheck package}
--->
+---
+title: "{A Vignette for datacheck package "
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteEngine{knitr::knitr}
+  %\VignetteIndexEntry{A Vignette for datacheck package}
+  %\usepackage[utf8]{inputenc}
+---
 
 <!-- rmarkdown v1 -->
 

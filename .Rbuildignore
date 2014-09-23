@@ -9,5 +9,3 @@ MD5
 ^\.Rproj.user
 tests
 inst/tests
-build
-vignettes/figure
