@@ -1,3 +1,15 @@
+datacheck 1.1.0
+==============
+* adopted a new release note format
+* adopted new author@R format
+
+
+datacheck 1.0.7
+==============
+* Updated DESCRIPTION file
+* Added new CIP open source license based on MIT license
+
+
 datacheck 1.0.6
 ==============
 * Reworked vignette to doc

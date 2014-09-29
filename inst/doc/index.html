@@ -54,8 +54,8 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </div>
 
 
-<div id="a-vignette-for-datacheck-package-version-1.0.6" class="section level1">
-<h1>A vignette for <em>datacheck</em> package (version 1.0.6)</h1>
+<div id="a-vignette-for-datacheck-package-version-1.0.7" class="section level1">
+<h1>A vignette for <em>datacheck</em> package (version 1.0.7)</h1>
 <p>Reinhard Simon, International Potato Center, Lima, Peru</p>
 <p>The library <em>datacheck</em> provides some simple functions to check the consistency of a dataset. It assumes data are available in tabular format - typically a csv file with objects or records in rows and attributes or variables in the columns.</p>
 <p>In a database setting the variables would be controlled by the database - at least conformance to types (character, numeric, etc) and allowed min/maximum values. However, often data are gathered in simple spreadsheets or are for other reasons without such constraints. Here, data constraints like allowed types or values, expected values and relationships can be defined using R commands and syntax. This allows much more flexibility and fine grained control. Typically it demands also a lot of domain knowledge from the user. It is therefore often useful to re-use such domain aware rule files across tables with similar content. Therefore this tool is foregiving if rules cannot be executed if a variable is not present in the table to be analyzed allowing the reuse of such rule files.</p>
@@ -87,7 +87,7 @@ profil =<span class="st"> </span><span class="kw">datadict.profile</span>(atable
 <p>Or see the tables (only the first 20 records and first 6 columns shown):</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xtable</span>(atable[<span class="dv">1</span>:<span class="dv">20</span>, <span class="dv">1</span>:<span class="dv">6</span>])</code></pre>
 <!-- html table generated in R 3.1.1 by xtable 1.7-4 package -->
-<!-- Tue Sep 23 15:38:30 2014 -->
+<!-- Wed Sep 24 10:02:36 2014 -->
 <table border="1">
 <tr> <th>  </th> <th> 
 ID
@@ -410,7 +410,7 @@ recs =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</spa
 cols =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>:<span class="dv">4</span>,  <span class="kw">ncol</span>(ps))
 <span class="kw">xtable</span>(ps[recs, cols])</code></pre>
 <!-- html table generated in R 3.1.1 by xtable 1.7-4 package -->
-<!-- Tue Sep 23 15:38:30 2014 -->
+<!-- Wed Sep 24 10:02:36 2014 -->
 <table border="1">
 <tr> <th>  </th> <th> 
 ID
@@ -594,7 +594,7 @@ profil =<span class="st"> </span><span class="kw">datadict.profile</span>(atable
 <p>To get a better handle on the data it is always informative to review simple descriptive summaries of the data. A custom summary function is included in the package to display this summary in tabular form:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xtable</span>(<span class="kw">shortSummary</span>(atable))</code></pre>
 <!-- html table generated in R 3.1.1 by xtable 1.7-4 package -->
-<!-- Tue Sep 23 15:38:30 2014 -->
+<!-- Wed Sep 24 10:02:36 2014 -->
 <table border="1">
 <tr> <th>  </th> <th> 
 n
@@ -1051,7 +1051,7 @@ Altitude
 <p>A summary of the results by rule can be seen from the profil object:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xtable</span>(profil$checks)</code></pre>
 <!-- html table generated in R 3.1.1 by xtable 1.7-4 package -->
-<!-- Tue Sep 23 15:38:31 2014 -->
+<!-- Wed Sep 24 10:02:36 2014 -->
 <table border="1">
 <tr> <th>  </th> <th> 
 Variable
@@ -1651,7 +1651,7 @@ ok
 profil =<span class="st"> </span><span class="kw">datadict.profile</span>(atable, srule1)</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xtable</span>(<span class="kw">prep4rep</span>(profil$checks))</code></pre>
 <!-- html table generated in R 3.1.1 by xtable 1.7-4 package -->
-<!-- Tue Sep 23 15:38:31 2014 -->
+<!-- Wed Sep 24 10:02:36 2014 -->
 <table border="1">
 <tr> <th>  </th> <th> 
 Variable
@@ -2257,7 +2257,7 @@ profil =<span class="st"> </span><span class="kw">datadict.profile</span>(atable
 <p>Now let us just look at an excerpt of the results table:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">xtable</span>(<span class="kw">prep4rep</span>(profil$checks[<span class="dv">20</span>:<span class="dv">30</span>,]))</code></pre>
 <!-- html table generated in R 3.1.1 by xtable 1.7-4 package -->
-<!-- Tue Sep 23 15:38:31 2014 -->
+<!-- Wed Sep 24 10:02:36 2014 -->
 <table border="1">
 <tr> <th>  </th> <th> 
 Variable
