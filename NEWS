@@ -3,6 +3,7 @@ datacheck 1.2.0
 * Improvements in two functions: is_proper_name and is_one_of (thanks to Ze Loff)
 * All visible functions are being migrated to a more consistent naming scheme: words are all separated by underscore now (instead of mixture of camelcase and dots as separators).
 * Added bug reporting URL and source code repository URL
+* fixed a bug in read_rules
 
 datacheck 1.1.0
 ==============
