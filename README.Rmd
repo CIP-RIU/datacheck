@@ -24,13 +24,9 @@ You can download release versions from the CRAN repository following standard me
 
 The latest development version can be obtained from this repository in github using:
 
-```{r}
+```r
 
-
-#devtools::install_github("c5sire/datacheck")
-
-
-
+if (!require('devtools')) install.packages('devtools')
 
 ```
 

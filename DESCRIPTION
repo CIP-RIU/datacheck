@@ -3,11 +3,9 @@ Type: Package
 Title: Tools For Checking Data Consistency
 Version: 1.2.0
 Date: 2015-04-16
-Authors@R: as.person(c(
-    "Reinhard Simon (CIP) <R.SIMON@CGIAR.ORG> [aut, cre]",
-    "Zé Loff <zeloff@zeloff.org> [aut]",
-    "International Potato Center [cph]"
-    ))
+Maintainer: "Simon, Reinhard (CIP)" <R.SIMON@CGIAR.ORG>
+Author: "Simon, Reinhard (CIP)" <R.SIMON@CGIAR.ORG>, Zé Loff <zeloff@zeloff.org>
+Copyright: International Potato Center (CIP)
 License: MIT + file LICENSE
 URL: https://github.com/c5sire/datacheck
 BugReports: https://github.com/c5sire/datacheck/issues
