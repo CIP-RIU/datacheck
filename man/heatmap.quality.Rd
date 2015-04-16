@@ -25,7 +25,7 @@ Knows to extract the quality matrix from the profile object and pass it on to th
 Plots a heatmap.
 }
 \details{
-Currently this function is limited a table size of 300 records.
+Currently this function is limited a table siZé of 300 records.
 }
 \author{
 Reinhard Simon

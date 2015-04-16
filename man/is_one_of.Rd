@@ -66,7 +66,7 @@ setwd(owd)
  
 }
 \author{
-Reinhard Simon, Ze Loff
+Reinhard Simon, Zé Loff
 }
 \seealso{
 Other rule_checks: \code{\link{has.punct}};

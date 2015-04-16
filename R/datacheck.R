@@ -76,7 +76,7 @@ has_punct <- function(s) {
 #'
 #' @aliases is.properName
 #' @param aname a character string
-#' @author Reinhard Simon, Ze Loff
+#' @author Reinhard Simon, Zé Loff
 #' @return boolean TRUE if ok
 #' @family rule_checks
 #' @example inst/examples/is_properName.R
@@ -92,7 +92,7 @@ is.properName <- function(aname) {
 #'
 #' @aliases is_proper_name
 #' @param aname a character string
-#' @author Reinhard Simon, Ze Loff
+#' @author Reinhard Simon, Zé Loff
 #' @return boolean TRUE if ok
 #' @family rule_checks
 #' @example inst/examples/is_properName.R
@@ -154,7 +154,7 @@ is_only_lowers <- function(s) {
 #' @aliases is.oneOf
 #' @param x a factor level as character string
 #' @param aset a vector of character strings or a path to a custom file (full pathname where necessary)
-#' @author Reinhard Simon, Ze Loff
+#' @author Reinhard Simon, Zé Loff
 #' @return boolean TRUE if detects anything
 #' @family rule_checks
 #' @export
@@ -198,7 +198,7 @@ is.oneOf <- function(x, aset) {
 #' @aliases is_one_of
 #' @param x a factor level as character string
 #' @param aset a vector of character strings or a path to a custom file (full pathname where necessary)
-#' @author Reinhard Simon, Ze Loff
+#' @author Reinhard Simon, Zé Loff
 #' @return boolean TRUE if detects anything
 #' @family rule_checks
 #' @export
@@ -879,7 +879,7 @@ pkg_version <- function(pkg) {
 #' Knows to extract the quality matrix from the profile object and pass it on to the heatmap function.
 #' Plots a heatmap.
 #' 
-#' Currently this function is limited a table size of 300 records.
+#' Currently this function is limited a table siZé of 300 records.
 #'
 #' @param profile a datadict.profile object
 #' @param recLab variable that should be used for labeling the records
@@ -930,7 +930,7 @@ heatmap.quality <- function(profile, recLab = NULL, recMax = 100, scoreMax = NUL
 #' Knows to extract the quality matrix from the profile object and pass it on to the heatmap function.
 #' Plots a heatmap.
 #' 
-#' Currently this function is limited a table size of 300 records.
+#' Currently this function is limited a table siZé of 300 records.
 #'
 #' @param profile a datadict.profile object
 #' @param recLab variable that should be used for labeling the records

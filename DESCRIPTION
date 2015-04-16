@@ -1,20 +1,24 @@
 Package: datacheck
 Type: Package
-Title: Tools for Checking Data Consistency
-Version: 1.1.0.9999
+Title: Tools For Checking Data Consistency
+Version: 1.1.1.9999
 Date: 2015-04-16
 Authors@R: as.person(c(
     "Reinhard Simon (CIP) <R.SIMON@CGIAR.ORG> [aut, cre]",
-    "International Potato Center [cph]"))
+    "Zé Loff <zeloff@zeloff.org> [aut]",
+    "International Potato Center [cph]"
+    ))
 License: MIT + file LICENSE
 URL: http://glimmer.rstudio.com/cipotato/datacheck
-Description: The package helps to check variables against a
+BugReports: 
+Description: Functions to check variables against a
     set of basic rules. A rule file can be accompanied by look-up tables. In
-    addition, there are some convenience testing functions that may
-    serve also as an example for defining clearer 'data rules' or tests. An
+    addition, there are some convenience functions that may
+    serve as an example for defining clearer 'data rules'. An
     HTML based user interface facilitates initial exploration of the
     functionality.
 LazyData: yes
+Encoding: UTF-8
 Imports:
     stringr,
     Hmisc,

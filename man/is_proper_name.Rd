@@ -25,7 +25,7 @@ is_proper_name("john") == FALSE
 is_proper_name(123) == FALSE 
 }
 \author{
-Reinhard Simon, Ze Loff
+Reinhard Simon, Zé Loff
 }
 \seealso{
 Other rule_checks: \code{\link{has.punct}};
