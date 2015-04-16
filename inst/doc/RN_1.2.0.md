@@ -23,7 +23,7 @@ Changes
 
 All function names that consist of several words now separate them with an underscore rather than the former mixture of dots and camelcase; e.g. is.oneOf becomes is_one_of.
 
-The link to the online demo has been removed since that server is being decommissioned. When the transition to the new server is being finalized the link will be available via the soruce server.
+The link to the online demo has been removed since that server is being decommissioned. When the transition to the new server is being finalized the link will be available via the source code download site below.
 
 Download & source code
 ========
