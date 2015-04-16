@@ -1,4 +1,4 @@
-
+library(stringr)
 # Get example data files
 atable <- system.file("examples/db.csv", package = "datacheck")
 arule <- system.file("examples/rules1.R", package = "datacheck")
@@ -17,17 +17,13 @@ file.copy(arule, crule)
 file.copy(aloctn, cloctn)
 
 at <- read.csv(ctable, stringsAsFactors = FALSE)
-ad <- read.rules(crule)
+ad <- read_rules(crule)
 
-db <- datadict.profile(at, ad)
+db <- datadict_profile(at, ad)
 
-is.datadict.profile(db) == TRUE
+is_datadict_profile(db) == TRUE
 
 db
 
 setwd(owd)
 
-TRUE
-TRUE
-TRUE
-TRUE 

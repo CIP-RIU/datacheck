@@ -22,19 +22,23 @@ atbler <- system.file("examples/db-err.csv", package = "datacheck")
 arule <- system.file("examples/rules1.R", package = "datacheck")
 
 at <- read.csv(atbler, stringsAsFactors = FALSE)
-ad <- read.rules(arule)
+ad <- read_rules(arule)
 
-db_e <- datadict.profile(at, ad)
+db_e <- datadict_profile(at, ad)
 
-has.ruleErrors(db_e) == TRUE 
+has_rule_errors(db_e) == TRUE 
 }
 \author{
 Reinhard Simon
 }
 \seealso{
 Other datadict: \code{\link{as.rules}};
-  \code{\link{datadict.profile}};
+  \code{\link{as_rules}}; \code{\link{datadict.profile}};
+  \code{\link{datadict_profile}};
+  \code{\link{has_rule_errors}};
   \code{\link{is.datadict.profile}};
-  \code{\link{prep4rep}}; \code{\link{read.rules}}
+  \code{\link{is_datadict_profile}};
+  \code{\link{prep4rep}}; \code{\link{read.rules}};
+  \code{\link{read_rules}}
 }
 

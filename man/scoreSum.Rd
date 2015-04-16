@@ -18,6 +18,8 @@ Reinhard Simon
 }
 \seealso{
 Other visuals: \code{\link{heatmap.quality}};
-  \code{\link{ruleCoverage}}
+  \code{\link{heatmap_quality}};
+  \code{\link{ruleCoverage}}; \code{\link{rule_coverage}};
+  \code{\link{score_sum}}
 }
 

@@ -16,17 +16,21 @@ boolean TRUE if detects anything
 Tests if a string has only lower case letters
 }
 \examples{
-is.onlyLowers("example") == TRUE
+is_only_lowers("example") == TRUE
 
-is.onlyLowers("Example") == FALSE
+is_only_lowers("Example") == FALSE
  
 }
 \author{
 Reinhard Simon
 }
 \seealso{
-Other rule_checks: \code{\link{has.punct}},
+Other rule_checks: \code{\link{has.punct}};
   \code{\link{has_punct}}; \code{\link{is.oneOf}};
-  \code{\link{is.properName}}; \code{\link{is.withinRange}}
+  \code{\link{is.properName}};
+  \code{\link{is.withinRange}}; \code{\link{is_one_of}};
+  \code{\link{is_only_lowers}};
+  \code{\link{is_proper_name}};
+  \code{\link{is_within_range}}
 }
 

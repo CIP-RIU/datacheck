@@ -18,18 +18,22 @@ Tests if string is like a proper name with inital letter in upper case
 \examples{
 # Valid proper names
 
-is.properName("John") == TRUE
+is_proper_name("John") == TRUE
 
-is.properName("john") == FALSE
+is_proper_name("john") == FALSE
 
-is.properName(123) == FALSE 
+is_proper_name(123) == FALSE 
 }
 \author{
-Reinhard Simon
+Reinhard Simon, Ze Loff
 }
 \seealso{
-Other rule_checks: \code{\link{has.punct}},
+Other rule_checks: \code{\link{has.punct}};
   \code{\link{has_punct}}; \code{\link{is.oneOf}};
-  \code{\link{is.onlyLowers}}; \code{\link{is.withinRange}}
+  \code{\link{is.onlyLowers}};
+  \code{\link{is.withinRange}}; \code{\link{is_one_of}};
+  \code{\link{is_only_lowers}};
+  \code{\link{is_proper_name}};
+  \code{\link{is_within_range}}
 }
 

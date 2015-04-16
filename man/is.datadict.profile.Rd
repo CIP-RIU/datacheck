@@ -16,7 +16,7 @@ boolean
 Is this a datadict.profile object
 }
 \examples{
-
+library(stringr)
 # Get example data files
 atable <- system.file("examples/db.csv", package = "datacheck")
 arule <- system.file("examples/rules1.R", package = "datacheck")
@@ -35,28 +35,28 @@ file.copy(arule, crule)
 file.copy(aloctn, cloctn)
 
 at <- read.csv(ctable, stringsAsFactors = FALSE)
-ad <- read.rules(crule)
+ad <- read_rules(crule)
 
-db <- datadict.profile(at, ad)
+db <- datadict_profile(at, ad)
 
-is.datadict.profile(db) == TRUE
+is_datadict_profile(db) == TRUE
 
 db
 
 setwd(owd)
 
-TRUE
-TRUE
-TRUE
-TRUE 
 }
 \author{
 Reinhard Simon
 }
 \seealso{
 Other datadict: \code{\link{as.rules}};
-  \code{\link{datadict.profile}};
-  \code{\link{has.ruleErrors}}; \code{\link{prep4rep}};
-  \code{\link{read.rules}}
+  \code{\link{as_rules}}; \code{\link{datadict.profile}};
+  \code{\link{datadict_profile}};
+  \code{\link{has.ruleErrors}};
+  \code{\link{has_rule_errors}};
+  \code{\link{is_datadict_profile}};
+  \code{\link{prep4rep}}; \code{\link{read.rules}};
+  \code{\link{read_rules}}
 }
 

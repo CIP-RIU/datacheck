@@ -25,6 +25,8 @@ Reinhard Simon
 }
 \seealso{
 Other visuals: \code{\link{heatmap.quality}};
-  \code{\link{scoreSum}}
+  \code{\link{heatmap_quality}};
+  \code{\link{rule_coverage}}; \code{\link{scoreSum}};
+  \code{\link{score_sum}}
 }
 

@@ -16,9 +16,9 @@ Description: The package helps to check variables against a
     functionality.
 LazyData: yes
 Imports:
+    stringr,
     Hmisc,
-    shiny,
-    stringr
+    shiny
 Depends:
     R (>= 2.15.1),
     grDevices

@@ -2,7 +2,7 @@
 % Please edit documentation in R/datacheck.R
 \name{shortSummary}
 \alias{shortSummary}
-\title{Produces a tabular summary of descriptive statistics using the 'describe'
+\title{Produces a tabular summary of descriptive statistics using the 'Hmisc::describe'
 function from the Hmisc package.}
 \usage{
 shortSummary(atable)
@@ -17,6 +17,7 @@ Returns a dataframe of descriptive statistics
 Reinhard Simon
 }
 \seealso{
-Other helper: \code{\link{pkg.version}}
+Other helper: \code{\link{pkg.version}};
+  \code{\link{pkg_version}}; \code{\link{short_summary}}
 }
 

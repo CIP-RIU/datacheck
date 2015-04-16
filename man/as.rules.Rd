@@ -25,9 +25,14 @@ A comment after a rule is used to document the specific rule in the summary tabl
 Reinhard Simon
 }
 \seealso{
-Other datadict: \code{\link{datadict.profile}};
+Other datadict: \code{\link{as_rules}};
+  \code{\link{datadict.profile}};
+  \code{\link{datadict_profile}};
   \code{\link{has.ruleErrors}};
+  \code{\link{has_rule_errors}};
   \code{\link{is.datadict.profile}};
-  \code{\link{prep4rep}}; \code{\link{read.rules}}
+  \code{\link{is_datadict_profile}};
+  \code{\link{prep4rep}}; \code{\link{read.rules}};
+  \code{\link{read_rules}}
 }
 

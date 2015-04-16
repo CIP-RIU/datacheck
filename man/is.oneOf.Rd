@@ -32,13 +32,13 @@ must be a subset of aset (or the lookup file): see the example section.
 \examples{
 # Case 1: define the reference set or lookup set within the function. Useful for small or binary
 # sets like m(ale)/f(emale)
-is.oneOf("m", "m") == TRUE
+is_one_of("m", "m") == TRUE
 
-is.oneOf("m", c("f", "m")) == TRUE
+is_one_of("m", c("f", "m")) == TRUE
 
-is.oneOf("y", c("f", "m")) == FALSE
+is_one_of("y", c("f", "m")) == FALSE
 
-is.oneOf(c("b", "c", "d"), c("a", "b", "c", "d", "e")) == TRUE
+is_one_of(c("b", "c", "d"), c("a", "b", "c", "d", "e")) == TRUE
 
 
 # Case 2: use an external lookup table. The external lookup table must have at least one column
@@ -58,19 +58,23 @@ db <- as.data.frame(db, stringsAsFactors = FALSE)
 names(db) <- c("VALUES", "LABELS")
 write.csv(db, "sample.csv", row.names = FALSE)
 
-is.oneOf("A", "sample.csv") == TRUE
-is.oneOf("Z", "sample.csv") == FALSE
+is_one_of("A", "sample.csv") == TRUE
+is_one_of("Z", "sample.csv") == FALSE
 
 # switching back to your working directory
 setwd(owd)
  
 }
 \author{
-Reinhard Simon
+Reinhard Simon, Ze Loff
 }
 \seealso{
-Other rule_checks: \code{\link{has.punct}},
+Other rule_checks: \code{\link{has.punct}};
   \code{\link{has_punct}}; \code{\link{is.onlyLowers}};
-  \code{\link{is.properName}}; \code{\link{is.withinRange}}
+  \code{\link{is.properName}};
+  \code{\link{is.withinRange}}; \code{\link{is_one_of}};
+  \code{\link{is_only_lowers}};
+  \code{\link{is_proper_name}};
+  \code{\link{is_within_range}}
 }
 

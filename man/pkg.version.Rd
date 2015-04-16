@@ -19,6 +19,7 @@ Uses the citation() function.
 Reinhard Simon
 }
 \seealso{
-Other helper: \code{\link{shortSummary}}
+Other helper: \code{\link{pkg_version}};
+  \code{\link{shortSummary}}; \code{\link{short_summary}}
 }
 

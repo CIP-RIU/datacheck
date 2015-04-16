@@ -20,16 +20,19 @@ boolean TRUE if detects anything
 Tests if a numeric value is between a minimal and maximum value. Serves as convenience function.
 }
 \examples{
-is.withinRange(1, 0, 2) == TRUE
+is_within_range(1, 0, 2) == TRUE
 
-is.withinRange(-1, 0, 2) == FALSE 
+is_within_range(-1, 0, 2) == FALSE 
 }
 \author{
 Reinhard Simon
 }
 \seealso{
-Other rule_checks: \code{\link{has.punct}},
+Other rule_checks: \code{\link{has.punct}};
   \code{\link{has_punct}}; \code{\link{is.oneOf}};
-  \code{\link{is.onlyLowers}}; \code{\link{is.properName}}
+  \code{\link{is.onlyLowers}}; \code{\link{is.properName}};
+  \code{\link{is_one_of}}; \code{\link{is_only_lowers}};
+  \code{\link{is_proper_name}};
+  \code{\link{is_within_range}}
 }
 

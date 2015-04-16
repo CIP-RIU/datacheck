@@ -2,7 +2,6 @@
 % Please edit documentation in R/datacheck.R
 \name{has.punct}
 \alias{has.punct}
-\alias{has_punct}
 \title{Tests for presence of most common punctuation characters}
 \usage{
 has.punct(s)
@@ -18,14 +17,18 @@ These include: .?'!_#$^&*()+=<>,;' - and [tab] and [at]
 }
 \examples{
 
-has.punct(".") == TRUE 
+has_punct(".") == TRUE 
 }
 \author{
 Reinhard Simon
 }
 \seealso{
-Other rule_checks: \code{\link{is.oneOf}};
-  \code{\link{is.onlyLowers}}; \code{\link{is.properName}};
-  \code{\link{is.withinRange}}
+Other rule_checks: \code{\link{has_punct}};
+  \code{\link{is.oneOf}}; \code{\link{is.onlyLowers}};
+  \code{\link{is.properName}};
+  \code{\link{is.withinRange}}; \code{\link{is_one_of}};
+  \code{\link{is_only_lowers}};
+  \code{\link{is_proper_name}};
+  \code{\link{is_within_range}}
 }
 

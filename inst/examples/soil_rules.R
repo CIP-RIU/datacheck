@@ -36,17 +36,16 @@ is.numeric(CaCO3)
 CaCO3 >= 0
 
 is.numeric(Sand)
-is.withinRange(Sand, 0, 100)
+is_within_range(Sand, 0, 100)
 
 is.numeric(Lime)
-is.withinRange(Lime, 0, 100)
+is_within_range(Lime, 0, 100)
 
 is.numeric(Clay)
-is.withinRange(Clay, 0, 100)
+is_within_range(Clay, 0, 100)
 
 is.character(Soil_texture)
-is.oneOf(Soil_texture, c("Loam", "Clay Loam", "Sandy Loam", "Sandy Clay Loam", "Clay", "Sand", "Loamy Sand", 
-  "Sandy Clay", "Silt Loam", "Silty Clay Loam", "Silty Clay", "Organic Soil"))
+is_one_of(Soil_texture, c("Loam", "Clay Loam", "Sandy Loam", "Sandy Clay Loam", "Clay", "Sand", "Loamy Sand", "Sandy Clay", "Silt Loam", "Silty Clay Loam", "Silty Clay", "Organic Soil"))
 
 is.numeric(P)
 P >= 0 

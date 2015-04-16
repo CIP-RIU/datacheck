@@ -31,7 +31,8 @@ Currently this function is limited a table size of 300 records.
 Reinhard Simon
 }
 \seealso{
-Other visuals: \code{\link{ruleCoverage}};
-  \code{\link{scoreSum}}
+Other visuals: \code{\link{heatmap_quality}};
+  \code{\link{ruleCoverage}}; \code{\link{rule_coverage}};
+  \code{\link{scoreSum}}; \code{\link{score_sum}}
 }
 

@@ -15,4 +15,7 @@ Runs a web server to show the user interface.
 \author{
 Reinhard Simon
 }
+\seealso{
+Other interface: \code{\link{run_datacheck}}
+}
 
