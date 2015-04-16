@@ -12,7 +12,7 @@ vignette: >
 
 
 
-A vignette for *datacheck* package (version 1.1.0)
+A vignette for *datacheck* package (version 1.2.0)
 ========================================================
 Reinhard Simon, International Potato Center, Lima, Peru
 
@@ -85,7 +85,7 @@ xtable(atable[1:20, 1:6])
 ```
 
 <!-- html table generated in R 3.1.3 by xtable 1.7-4 package -->
-<!-- Thu Apr 16 11:03:43 2015 -->
+<!-- Thu Apr 16 13:09:43 2015 -->
 <table border=1>
 <tr> <th>  </th> <th> ID </th> <th> Latitude </th> <th> Longitude </th> <th> Country </th> <th> Adm1 </th> <th> Adm2 </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right"> 767 </td> <td align="right"> -12.03 </td> <td align="right"> -75.24 </td> <td> Peru </td> <td> Junin </td> <td> Huancayo </td> </tr>
@@ -120,7 +120,7 @@ xtable(ps[recs, cols])
 ```
 
 <!-- html table generated in R 3.1.3 by xtable 1.7-4 package -->
-<!-- Thu Apr 16 11:03:43 2015 -->
+<!-- Thu Apr 16 13:09:43 2015 -->
 <table border=1>
 <tr> <th>  </th> <th> ID </th> <th> Latitude </th> <th> Longitude </th> <th> Country </th> <th> Record.score </th>  </tr>
   <tr> <td align="right"> 1 </td> <td align="right"> 3.00 </td> <td align="right"> 2.00 </td> <td align="right"> 3.00 </td> <td align="right"> 2.00 </td> <td align="right"> 35.00 </td> </tr>
@@ -162,7 +162,7 @@ xtable(short_summary(atable))
 ```
 
 <!-- html table generated in R 3.1.3 by xtable 1.7-4 package -->
-<!-- Thu Apr 16 11:03:43 2015 -->
+<!-- Thu Apr 16 13:09:46 2015 -->
 <table border=1>
 <tr> <th>  </th> <th> n </th> <th> missing </th> <th> unique </th> <th> value </th> <th> min </th> <th> max </th> <th> Mean </th> <th> sd </th> <th> .05 </th> <th> .10 </th> <th> .25 </th> <th> .50 </th> <th> .75 </th> <th> .90 </th> <th> .95 </th>  </tr>
   <tr> <td align="right"> ID </td> <td> 100 </td> <td> 0 </td> <td> 100 </td> <td>  </td> <td> 5 </td> <td> 1685 </td> <td> 822.6 </td> <td> 498.51 </td> <td>   96.65 </td> <td>  114.70 </td> <td>  424.50 </td> <td>  838.00 </td> <td> 1190.00 </td> <td> 1549.60 </td> <td> 1605.70 </td> </tr>
@@ -192,7 +192,7 @@ xtable(profil$checks)
 ```
 
 <!-- html table generated in R 3.1.3 by xtable 1.7-4 package -->
-<!-- Thu Apr 16 11:03:43 2015 -->
+<!-- Thu Apr 16 13:09:46 2015 -->
 <table border=1>
 <tr> <th>  </th> <th> Variable </th> <th> Type </th> <th> Rule </th> <th> Comment </th> <th> Execution </th> <th> Error.sum </th> <th> Error.list </th>  </tr>
   <tr> <td align="right"> 1 </td> <td> ID </td> <td> integer </td> <td> is.integer(ID) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
@@ -221,11 +221,11 @@ xtable(profil$checks)
   <tr> <td align="right"> 24 </td> <td> CaCO3 </td> <td> numeric </td> <td> is.numeric(CaCO3) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 25 </td> <td> CaCO3 </td> <td> numeric </td> <td> CaCO3 &gt;= 0 </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 26 </td> <td> Sand </td> <td> numeric </td> <td> is.numeric(Sand) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
-  <tr> <td align="right"> 27 </td> <td> Sand </td> <td> numeric </td> <td> is.withinRange(Sand, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
+  <tr> <td align="right"> 27 </td> <td> Sand </td> <td> numeric </td> <td> is_within_range(Sand, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 28 </td> <td> Lime </td> <td> numeric </td> <td> is.numeric(Lime) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
-  <tr> <td align="right"> 29 </td> <td> Lime </td> <td> numeric </td> <td> is.withinRange(Lime, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
+  <tr> <td align="right"> 29 </td> <td> Lime </td> <td> numeric </td> <td> is_within_range(Lime, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 30 </td> <td> Clay </td> <td> numeric </td> <td> is.numeric(Clay) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
-  <tr> <td align="right"> 31 </td> <td> Clay </td> <td> numeric </td> <td> is.withinRange(Clay, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
+  <tr> <td align="right"> 31 </td> <td> Clay </td> <td> numeric </td> <td> is_within_range(Clay, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 32 </td> <td> Soil_texture </td> <td> character </td> <td> is.character(Soil_texture) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 34 </td> <td> P </td> <td> numeric </td> <td> is.numeric(P) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 35 </td> <td> P </td> <td> numeric </td> <td> P &gt;= 0 </td> <td> None </td> <td> ok </td> <td align="right">   1 </td> <td> 1 </td> </tr>
@@ -245,7 +245,7 @@ xtable(prep4rep(profil$checks))
 ```
 
 <!-- html table generated in R 3.1.3 by xtable 1.7-4 package -->
-<!-- Thu Apr 16 11:03:43 2015 -->
+<!-- Thu Apr 16 13:09:46 2015 -->
 <table border=1>
 <tr> <th>  </th> <th> Variable </th> <th> Type </th> <th> Rule </th> <th> Comment </th> <th> Execution </th> <th> Error.sum </th> <th> Error.list </th>  </tr>
   <tr> <td align="right"> 1 </td> <td> ID </td> <td> integer </td> <td> is.integer(ID) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
@@ -274,11 +274,11 @@ xtable(prep4rep(profil$checks))
   <tr> <td align="right"> 24 </td> <td> CaCO3 </td> <td> numeric </td> <td> is.numeric(CaCO3) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 25 </td> <td> CaCO3 </td> <td> numeric </td> <td> CaCO3 &gt;= 0 </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 26 </td> <td> Sand </td> <td> numeric </td> <td> is.numeric(Sand) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
-  <tr> <td align="right"> 27 </td> <td> Sand </td> <td> numeric </td> <td> is.withinRange(Sand, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">  11 </td> <td> 20,21,22,23,24 ... more </td> </tr>
+  <tr> <td align="right"> 27 </td> <td> Sand </td> <td> numeric </td> <td> is_within_range(Sand, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">  11 </td> <td> 20,21,22,23,24 ... more </td> </tr>
   <tr> <td align="right"> 28 </td> <td> Lime </td> <td> numeric </td> <td> is.numeric(Lime) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
-  <tr> <td align="right"> 29 </td> <td> Lime </td> <td> numeric </td> <td> is.withinRange(Lime, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
+  <tr> <td align="right"> 29 </td> <td> Lime </td> <td> numeric </td> <td> is_within_range(Lime, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 30 </td> <td> Clay </td> <td> numeric </td> <td> is.numeric(Clay) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
-  <tr> <td align="right"> 31 </td> <td> Clay </td> <td> numeric </td> <td> is.withinRange(Clay, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
+  <tr> <td align="right"> 31 </td> <td> Clay </td> <td> numeric </td> <td> is_within_range(Clay, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 32 </td> <td> Soil_texture </td> <td> character </td> <td> is.character(Soil_texture) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 34 </td> <td> P </td> <td> numeric </td> <td> is.numeric(P) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 35 </td> <td> P </td> <td> numeric </td> <td> P &gt;= 0 </td> <td> None </td> <td> ok </td> <td align="right">   1 </td> <td> 1 </td> </tr>
@@ -304,7 +304,7 @@ xtable(prep4rep(profil$checks[20:30,]))
 ```
 
 <!-- html table generated in R 3.1.3 by xtable 1.7-4 package -->
-<!-- Thu Apr 16 11:03:43 2015 -->
+<!-- Thu Apr 16 13:09:46 2015 -->
 <table border=1>
 <tr> <th>  </th> <th> Variable </th> <th> Type </th> <th> Rule </th> <th> Comment </th> <th> Execution </th> <th> Error.sum </th> <th> Error.list </th>  </tr>
   <tr> <td align="right"> 20 </td> <td> pH </td> <td> numeric </td> <td> pH &gt;= 0 </td> <td> pH bigger than </td> <td> ok </td> <td align="right">   1 </td> <td> 11 </td> </tr>
@@ -314,9 +314,9 @@ xtable(prep4rep(profil$checks[20:30,]))
   <tr> <td align="right"> 24 </td> <td> CaCO3 </td> <td> numeric </td> <td> is.numeric(CaCO3) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 25 </td> <td> caCO3 </td> <td> numeric </td> <td> caCO3 &gt;= 0 </td> <td> None </td> <td> failed </td> <td align="right">   0 </td> <td> NA </td> </tr>
   <tr> <td align="right"> 26 </td> <td> Sand </td> <td> numeric </td> <td> is.numeric(Sand) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
-  <tr> <td align="right"> 27 </td> <td> Sand </td> <td> numeric </td> <td> is.withinRange(Sand, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">  11 </td> <td> 20,21,22,23,24 ... more </td> </tr>
+  <tr> <td align="right"> 27 </td> <td> Sand </td> <td> numeric </td> <td> is_within_range(Sand, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">  11 </td> <td> 20,21,22,23,24 ... more </td> </tr>
   <tr> <td align="right"> 28 </td> <td> Lime </td> <td> numeric </td> <td> is.numeric(Lime) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
-  <tr> <td align="right"> 29 </td> <td> Lime </td> <td> numeric </td> <td> is.withinRange(Lime, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
+  <tr> <td align="right"> 29 </td> <td> Lime </td> <td> numeric </td> <td> is_within_range(Lime, 0, 100) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
   <tr> <td align="right"> 30 </td> <td> Clay </td> <td> numeric </td> <td> is.numeric(Clay) </td> <td> None </td> <td> ok </td> <td align="right">   0 </td> <td> none </td> </tr>
    </table>
 

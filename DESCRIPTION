@@ -1,7 +1,7 @@
 Package: datacheck
 Type: Package
 Title: Tools For Checking Data Consistency
-Version: 1.1.1.9999
+Version: 1.2.0
 Date: 2015-04-16
 Authors@R: as.person(c(
     "Reinhard Simon (CIP) <R.SIMON@CGIAR.ORG> [aut, cre]",
@@ -9,8 +9,8 @@ Authors@R: as.person(c(
     "International Potato Center [cph]"
     ))
 License: MIT + file LICENSE
-URL: http://glimmer.rstudio.com/cipotato/datacheck
-BugReports: 
+URL: https://github.com/c5sire/datacheck
+BugReports: https://github.com/c5sire/datacheck/issues
 Description: Functions to check variables against a
     set of basic rules. A rule file can be accompanied by look-up tables. In
     addition, there are some convenience functions that may
