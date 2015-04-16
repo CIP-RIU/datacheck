@@ -12,4 +12,5 @@ The latest development version can be obtained from this repository in github us
 ``` r
 
 if (!require('devtools')) install.packages('devtools')
+devtools::install_github('c5sire/datacheck')
 ```
