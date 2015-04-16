@@ -1,13 +1,12 @@
-
 # Case 1: define the reference set or lookup set within the function. Useful for small or 
 # binary sets like m(ale)/f(emale)
-is.oneOf("m","m") == TRUE
+is.oneOf("m", "m") == TRUE
 
-is.oneOf("m","f; m") == TRUE
+is.oneOf("m", c("f", "m")) == TRUE
 
-is.oneOf("y", "f; m") == FALSE
+is.oneOf("y", c("f", "m")) == FALSE
 
-is.oneOf("b;c;d", "a;b;c;d;e") == TRUE
+is.oneOf(c("b", "c", "d"), c("a", "b", "c", "d", "e")) == TRUE
 
 
 # Case 2: use an external lookup table. The external lookup table must have at least one 
@@ -32,3 +31,4 @@ is.oneOf("Z", "sample.csv") == FALSE
 
 # switching back to your working directory
 setwd(owd)
+

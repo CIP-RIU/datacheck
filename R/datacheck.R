@@ -46,7 +46,7 @@ library(shiny)
 #'
 #' These include: .?'!_#$^&*()+=<>,;' - and [tab] and [at]
 #'
-#' @aliases has.punct
+#' @aliases has_punct
 #' @param s a character string
 #' @author Reinhard Simon
 #' @return boolean TRUE if detects anything
@@ -67,15 +67,9 @@ has.punct <- function(s) {
 #' @example inst/examples/is_properName.R
 #' @export
 is.properName <- function(aname) {
-  if (is.vector(aname)) 
-    aname = aname[1]
-  if (!is.character(aname)) 
-    return(FALSE)
-  if (has.punct(aname)) 
-    return(FALSE)
-  res1 = str_detect(str_sub(aname, 1, 1), "[A-Z]{1}")[[1]]
-  res2 = str_detect(str_sub(aname, 2, str_length(aname)), "[a-z]{1,24}")[[1]]
-  return(all(res1, res2))
+  no_punct = !has.punct(aname)
+  proper_case = grepl("^[A-Z]{1}[a-z]+$", aname)
+  return(no_punct & proper_case)
 }
 
 #' Tests if a string has only lower case letters
@@ -89,12 +83,7 @@ is.properName <- function(aname) {
 #' @example inst/examples/is_onlyLowers.R
 is.onlyLowers <- function(s) {
   stopifnot(is.character(s))
-  n = str_length(s)
-  sm = str_match(s, paste("[a-z]{1,", as.character(n), "}", sep = ""))
-  if (is.na(sm)) 
-    return(FALSE)
-  res = n == str_length(sm)
-  res[[1]]
+  grepl("^[a-z]+$", s)
 }
 
 
@@ -124,19 +113,6 @@ is.onlyLowers <- function(s) {
 #' @example inst/examples/is_oneOf.R
 is.oneOf <- function(x, aset) {
   stopifnot(is.character(x), is.character(aset))
-  if (is.na(x)) 
-    return(NA)
-  if (x == aset) 
-    return(TRUE)
-  if (str_detect(aset[1], ";")) {
-    aset = str_split(aset, ";")[[1]]
-    aset = str_trim(aset)
-  }
-  
-  if (str_detect(x, ";")) {
-    x = str_split(x, ";")[[1]]
-  }
-  x = str_trim(x)
   
   if (str_detect(aset[1], "(\\.csv)")) {
     if (file.exists(aset)) {
@@ -150,7 +126,7 @@ is.oneOf <- function(x, aset) {
     }
   }
   
-  res = all(x %in% aset)
+  res = x %in% aset
   return(res)
 }
 

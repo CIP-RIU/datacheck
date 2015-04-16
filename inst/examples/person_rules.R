@@ -1,13 +1,13 @@
-sapply(id, is.integer) # id
+is.integer(id) # id
 id > 0 & id < 11 # id
 
-sapply(lastname, is.character) #lastname
-sapply(lastname, is.properName) #lastname
+is.character(lastname) #lastname
+is.properName(lastname) #lastname
 
-sapply(firstname, is.character) #firstname
-sapply(firstname, is.properName) #firstname
+is.character(firstname) #firstname
+is.properName(firstname) #firstname
 
-sapply(gender, is.character) #gender
-sapply(gender, is.oneOf, "m;f") #gender
+is.character(gender) #gender
+is.oneOf(gender, c("m", "f")) #gender
 
 age > 10 & age < 70
