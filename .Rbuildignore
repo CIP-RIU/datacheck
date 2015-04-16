@@ -9,6 +9,6 @@ MD5
 ^\.Rproj.user
 tests
 inst/tests
-vignettes
 build
 ^\.travis\.yml$
+cran-comments.md
