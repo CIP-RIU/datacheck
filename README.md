@@ -3,4 +3,4 @@
 README
 ========================================================
 
-The package provides functionality to check variables against a set of basic format rules.
+The package provides functionality to check variables against a set of basic format rules. This is useful in data migration or data cleaning to quickly check assumptions about 
