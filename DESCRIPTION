@@ -10,7 +10,7 @@ License: MIT + file LICENSE
 URL: https://github.com/c5sire/datacheck
 BugReports: https://github.com/c5sire/datacheck/issues
 Description: Functions to check variables against a
-    set of basic rules. A rule file can be accompanied by look-up tables. In
+    set of data quality rules. A rule file can be accompanied by look-up tables. In
     addition, there are some convenience functions that may
     serve as an example for defining clearer 'data rules'. An
     HTML based user interface facilitates initial exploration of the

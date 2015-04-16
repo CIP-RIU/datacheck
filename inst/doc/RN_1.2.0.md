@@ -8,6 +8,13 @@ output: pdf_document
 Summary
 ========
 
+Datacheck provides functions to check variables against a
+    set of data quality rules. A rule file can be accompanied by look-up tables. In
+    addition, there are some convenience functions that may
+    serve as an example for defining clearer 'data rules'. An
+    HTML based user interface facilitates initial exploration of the
+    functionality.
+
 This is a release with some performance improvements (thanks to Ze Loff) and introducing a more consistent naming convention for all functions. The former function names are still functional but are being deprecated.
 
 Requirements
