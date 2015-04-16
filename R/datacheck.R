@@ -491,7 +491,12 @@ read_rules <- function(file = "") {
     return(res)
   
   path <- file.path(file)
-  res <- readLines(path)
+  if(!file.exists(path)) stop(paste("This file does not exist:", file))
+  res <- NULL
+  res <- try(
+    readLines(path)
+  )
+  if(is.null(res)) stop("The file does not seem to contain any rules!")
   
   res <- as_rules(res)
   
