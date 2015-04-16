@@ -36,8 +36,7 @@
 NA
 
 library(grDevices)
-#library(testthat)
-#library(xtable)
+# library(testthat) library(xtable)
 library(stringr)
 library(Hmisc)
 library(shiny)
@@ -54,7 +53,7 @@ library(shiny)
 #' @export
 #' @example inst/examples/has_punct.R
 has.punct <- function(s) {
-  str_detect(s,"[\\.\\?\\\'\\!\\_\\@\\#\\$\\^\\&\\*\\(\\)\\+\\=\\<\\>\\,\\:\\;\\'\\ \\\t\\-]")
+  str_detect(s, "[\\.\\?\\'\\!\\_\\@\\#\\$\\^\\&\\*\\(\\)\\+\\=\\<\\>\\,\\:\\;\\'\\ \\\t\\-]")
 }
 
 #' Tests if string is like a proper name with inital letter in upper case
@@ -67,8 +66,8 @@ has.punct <- function(s) {
 #' @example inst/examples/is_properName.R
 #' @export
 is.properName <- function(aname) {
-  no_punct = !has.punct(aname)
-  proper_case = grepl("^[A-Z]{1}[a-z]+$", aname)
+  no_punct <- !has.punct(aname)
+  proper_case <- grepl("^[A-Z]{1}[a-z]+$", aname)
   return(no_punct & proper_case)
 }
 
@@ -116,17 +115,17 @@ is.oneOf <- function(x, aset) {
   
   if (str_detect(aset[1], "(\\.csv)")) {
     if (file.exists(aset)) {
-      afile = aset
-      ast = read.csv(afile, stringsAsFactors = FALSE)
-      ast[, c("VALUES")] = as.character(ast[, c("VALUES")])
-      ast = str_trim(ast$VALUES)
-      aset = unique(ast)
+      afile <- aset
+      ast <- read.csv(afile, stringsAsFactors = FALSE)
+      ast[, c("VALUES")] <- as.character(ast[, c("VALUES")])
+      ast <- str_trim(ast$VALUES)
+      aset <- unique(ast)
     } else {
       stop()
     }
   }
   
-  res = x %in% aset
+  res <- x %in% aset
   return(res)
 }
 
@@ -143,18 +142,18 @@ is.oneOf <- function(x, aset) {
 #' @example inst/examples/is_withinRange.R
 is.withinRange <- function(val, min, max) {
   stopifnot(is.numeric(val), is.numeric(min), is.numeric(max))
-  val = as.numeric(val)
+  val <- as.numeric(val)
   val >= min & val <= max
 }
 
 
 # Applies a rule for a variable in a table (db)
 check.dataRule <- function(arule, adf, ruleName = NULL) {
-  r = parse(text = arule)
-  res = rep(NA, nrow(adf))
-  dn = names(adf)[names(adf) %in% ls()]
+  r <- parse(text = arule)
+  res <- rep(NA, nrow(adf))
+  dn <- names(adf)[names(adf) %in% ls()]
   rm(list = dn)
-  res = with(adf, {
+  res <- with(adf, {
     eval(r)
   })
   return(res)
@@ -180,64 +179,65 @@ as.rules <- function(lines = "") {
     return("")
   stopifnot(is.vector(lines))
   
-  res = lines
-  res = res[which(res != "")]
+  res <- lines
+  res <- res[which(res != "")]
   
   # Filter out comment lines starting with '#'
-  res = str_trim(res)
-  pos = str_locate(res, "#")[, 1] > 1
-  res = res[pos | is.na(pos)]
+  res <- str_trim(res)
+  pos <- str_locate(res, "#")[, 1] > 1
+  res <- res[pos | is.na(pos)]
   
-  pos = str_detect(res, "package =") | str_detect(res, "package=") | str_detect(res, " = ") | str_detect(res, "<-")
-  res = res[!pos]
+  pos <- str_detect(res, "package =") | str_detect(res, "package=") | str_detect(res, " = ") | str_detect(res, 
+    "<-")
+  res <- res[!pos]
   
   if (length(res) == 0) 
     return(NA)
   
   # Make a data.frame with two columns: rules, comments
-  res = as.data.frame(res, stringsAsF = F)
-  vars = rep("NA", n = nrow(res))
-  coms = rep("NA", n = nrow(res))
-  typs = rep("character", n = nrow(res))
-  res = cbind(vars, typs, res, coms)
-  res = as.data.frame(res)
-  names(res) = c("Variable", "Type", "Rule", "Comment")
-  for (i in 1:ncol(res)) res[, i] = as.character(res[, i])
+  res <- as.data.frame(res, stringsAsF = F)
+  vars <- rep("NA", n = nrow(res))
+  coms <- rep("NA", n = nrow(res))
+  typs <- rep("character", n = nrow(res))
+  res <- cbind(vars, typs, res, coms)
+  res <- as.data.frame(res)
+  names(res) <- c("Variable", "Type", "Rule", "Comment")
+  for (i in 1:ncol(res)) res[, i] <- as.character(res[, i])
   
   for (i in 1:nrow(res)) {
     if (str_detect(res[i, "Rule"], " #")) {
-      cmt = str_split(res[i, "Rule"], " #")[[1]][2]
+      cmt <- str_split(res[i, "Rule"], " #")[[1]][2]
     } else {
-      cmt = "None"
+      cmt <- "None"
     }
-    res[i, "Comment"] = str_trim(cmt)
-    p = parse(text = res[i, "Rule"])
-    res[i, "Rule"] = as.character(p)
-    res[i, "Variable"] = all.vars(p)[1]
+    res[i, "Comment"] <- str_trim(cmt)
+    p <- parse(text = res[i, "Rule"])
+    res[i, "Rule"] <- as.character(p)
+    res[i, "Variable"] <- all.vars(p)[1]
   }
   
   # Assign a variable type by examination of rules
-  vn = unique(res$Variable)
+  vn <- unique(res$Variable)
   for (j in 1:length(vn)) {
-    hasVar = res$Variable == vn[j]
+    hasVar <- res$Variable == vn[j]
     for (i in 1:nrow(res)) {
-      hasTypeI = str_detect(res$Rule[i], "is.integer") & res$Variable[i] == vn[j]
-      hasTypeD = str_detect(res$Rule[i], "is.double")  & res$Variable[i] == vn[j]
-      hasTypeN = str_detect(res$Rule[i], "is.numeric") & res$Variable[i] == vn[j]
-      hasTypeL = str_detect(res$Rule[i], "is.logical") & res$Variable[i] == vn[j]
+      hasTypeI <- str_detect(res$Rule[i], "is.integer") & res$Variable[i] == vn[j]
+      hasTypeD <- str_detect(res$Rule[i], "is.double") & res$Variable[i] == vn[j]
+      hasTypeN <- str_detect(res$Rule[i], "is.numeric") & res$Variable[i] == vn[j]
+      hasTypeL <- str_detect(res$Rule[i], "is.logical") & res$Variable[i] == vn[j]
       
       if (any(hasTypeI)) 
-        res[hasVar, "Type"] = "integer"
+        res[hasVar, "Type"] <- "integer"
       if (any(hasTypeD)) 
-        res[hasVar, "Type"] = "double"
+        res[hasVar, "Type"] <- "double"
       if (any(hasTypeL)) 
-        res[hasVar, "Type"] = "logical"
+        res[hasVar, "Type"] <- "logical"
       if (any(hasTypeN)) 
-        res[hasVar, "Type"] = "numeric"
+        res[hasVar, "Type"] <- "numeric"
     }
   }
   
-  class(res) = c("data.rules", "data.frame")
+  class(res) <- c("data.rules", "data.frame")
   return(res)
 }
 
@@ -257,16 +257,16 @@ as.rules <- function(lines = "") {
 #' @family datadict
 #' @export
 read.rules <- function(file = "") {
-  res = NA
+  res <- NA
   if (is.na(file)) 
     return(res)
   if (file == "") 
     return(res)
   
-  path = file.path(file)
-  res = readLines(path)
+  path <- file.path(file)
+  res <- readLines(path)
   
-  res = as.rules(res)
+  res <- as.rules(res)
   
   return(res)
 }
@@ -303,97 +303,97 @@ datadict.profile <- function(atable, adictionary) {
   stopifnot(is.data.frame(atable), is.data.rules(adictionary))
   
   # Progressbar initialization
-  pb = NULL
-  steps = 100
+  pb <- NULL
+  steps <- 100
   cat("\n   Checking data dictionary rules:\n")
   pb <- txtProgressBar(0, steps, style = 3, title = "datadict", label = "Checking rules:")
   setTxtProgressBar(pb, 1)
   
   try({
-    at = atable
-    dq = matrix(0, nrow = nrow(at), ncol = ncol(at))
-    dq = as.data.frame(dq)
-    names(dq) = names(at)
-    rownames(dq) = rownames(at)
-    ad = adictionary
+    at <- atable
+    dq <- matrix(0, nrow = nrow(at), ncol = ncol(at))
+    dq <- as.data.frame(dq)
+    names(dq) <- names(at)
+    rownames(dq) <- rownames(at)
+    ad <- adictionary
     
     # Convert columns in table in expected format
-    tn = names(at)
-    n = length(tn)
+    tn <- names(at)
+    n <- length(tn)
     
     for (i in 1:n) {
       try({
-        atype = ad[ad$Variable == tn[i], "Type"][1]
+        atype <- ad[ad$Variable == tn[i], "Type"][1]
         if (!is.na(atype)) {
-          at[, tn[i]] = as.character(at[, tn[i]])
+          at[, tn[i]] <- as.character(at[, tn[i]])
           if (atype == "integer") 
-            at[, tn[i]] = as.integer(at[, tn[i]])
+          at[, tn[i]] <- as.integer(at[, tn[i]])
           if (atype == "numeric") 
-            at[, tn[i]] = as.numeric(at[, tn[i]])
+          at[, tn[i]] <- as.numeric(at[, tn[i]])
           if (atype == "logical") 
-            at[, tn[i]] = as.logical(at[, tn[i]])
+          at[, tn[i]] <- as.logical(at[, tn[i]])
         }
       })
     }
-    n = nrow(ad)
-    w = steps/n
+    n <- nrow(ad)
+    w <- steps/n
     
-    Execution = rep("ok", n)
-    Error.sum = rep(0, n)
-    Error.list = rep("none", n)
-    ad = cbind(ad, Execution, Error.sum, Error.list)
-    ad[, "Error.list"] = as.character(ad$Error.list)
-    ad[, "Execution"] = as.character(ad$Execution)
+    Execution <- rep("ok", n)
+    Error.sum <- rep(0, n)
+    Error.list <- rep("none", n)
+    ad <- cbind(ad, Execution, Error.sum, Error.list)
+    ad[, "Error.list"] <- as.character(ad$Error.list)
+    ad[, "Execution"] <- as.character(ad$Execution)
     for (i in 1:n) {
-      res = NA
-      ers = which(!res)
-      cok = FALSE
+      res <- NA
+      ers <- which(!res)
+      cok <- FALSE
       try({
-        res = check.dataRule(ad[i, "Rule"], at)
-        out = res
-        out[out == TRUE] = 1
-        out[out == FALSE] = 0
-        out[is.na(out)] = 0
-        dq[, ad[i, "Variable"]] = dq[, ad[i, "Variable"]] + out
-        ers = which(!res)
-        cok = TRUE
+        res <- check.dataRule(ad[i, "Rule"], at)
+        out <- res
+        out[out == TRUE] <- 1
+        out[out == FALSE] <- 0
+        out[is.na(out)] <- 0
+        dq[, ad[i, "Variable"]] <- dq[, ad[i, "Variable"]] + out
+        ers <- which(!res)
+        cok <- TRUE
       }, silent = TRUE)
       if (length(ers) > 0) {
-        ad$Error.sum[i] = length(ers)
-        ad$Error.list[i] = paste(ers, collapse = ",")
+        ad$Error.sum[i] <- length(ers)
+        ad$Error.list[i] <- paste(ers, collapse = ",")
         
       }
       if (!cok) {
-        ad$Error.sum[i] = 0
-        ad$Error.list[i] = "NA"
-        ad$Execution[i] = "failed"
+        ad$Error.sum[i] <- 0
+        ad$Error.list[i] <- "NA"
+        ad$Execution[i] <- "failed"
       }
       setTxtProgressBar(pb, floor(w * i))
     }
     close(pb)
-    ad$Error.sum = round(ad$Error.sum, 0)
-    ad$Error.sum = as.integer(ad$Error.sum)
+    ad$Error.sum <- round(ad$Error.sum, 0)
+    ad$Error.sum <- as.integer(ad$Error.sum)
     
-    dq = rbind(dq, colSums(dq, na.rm = TRUE))
-    rownames(dq)[nrow(dq)] = "Attribute.score"
+    dq <- rbind(dq, colSums(dq, na.rm = TRUE))
+    rownames(dq)[nrow(dq)] <- "Attribute.score"
     
-    rpv = table(ad$Variable)  # Rules per variable
-    rvn = names(rpv)
-    rec = rep(0, ncol(dq))
+    rpv <- table(ad$Variable)  # Rules per variable
+    rvn <- names(rpv)
+    rec <- rep(0, ncol(dq))
     for (i in 1:ncol(dq)) {
       if (names(dq[i]) %in% rvn) {
-        rec[i] = as.integer(rpv[[names(dq[i])]])
+        rec[i] <- as.integer(rpv[[names(dq[i])]])
       }
     }
-    dq = rbind(dq, rec)
-    rownames(dq)[nrow(dq)] = "Rules.per.variable"
+    dq <- rbind(dq, rec)
+    rownames(dq)[nrow(dq)] <- "Rules.per.variable"
     
-    dq = cbind(dq, rowSums(dq, na.rm = TRUE))
-    names(dq)[ncol(dq)] = "Record.score"
+    dq <- cbind(dq, rowSums(dq, na.rm = TRUE))
+    names(dq)[ncol(dq)] <- "Record.score"
     
     
-    res = list(data = at, checks = ad, scores = dq)
-    class(res) = c("datadict.profile", "list")
+    res <- list(data = at, checks = ad, scores = dq)
+    class(res) <- c("datadict.profile", "list")
     return(res)
   }, silent = TRUE)
   return(NA)
@@ -425,7 +425,7 @@ is.datadict.profile <- function(x) {
 #' @example inst/examples/has_ruleErrors.R
 #' @export
 has.ruleErrors <- function(profile.rules) {
-  xx = sum(profile.rules$Error.sum)
+  xx <- sum(profile.rules$Error.sum)
   xx > 0
 }
 
@@ -443,16 +443,16 @@ has.ruleErrors <- function(profile.rules) {
 #' @family datadict
 #' @export
 prep4rep <- function(rule.checks, txt = "... more") {
-  rc = rule.checks
-  n = nrow(rc)
+  rc <- rule.checks
+  n <- nrow(rc)
   for (i in 1:n) {
-    s = rc$Error.list[i]
+    s <- rc$Error.list[i]
     if (str_detect(s, ",")) {
       if (str_count(s, ",") > 5) {
-        ss = str_split(s, ",")[[1]]
-        st = paste(ss[1:5], collapse = ",")
-        st = paste(st, txt)
-        rc$Error.list[i] = st
+        ss <- str_split(s, ",")[[1]]
+        st <- paste(ss[1:5], collapse = ",")
+        st <- paste(st, txt)
+        rc$Error.list[i] <- st
       }
     }
   }
@@ -470,7 +470,7 @@ prep4rep <- function(rule.checks, txt = "... more") {
 #' @family helper
 #' @export
 pkg.version <- function(pkg) {
-  cit = citation(pkg)
+  cit <- citation(pkg)
   str_extract(cit$note, "[0-9].[0-9].[0-9]")
 }
 
@@ -491,35 +491,35 @@ pkg.version <- function(pkg) {
 #' @author Reinhard Simon
 #' @family visuals
 #' @export
-heatmap.quality = function(profile, recLab = NULL, recMax = 100, scoreMax = NULL, cols = NULL, ...) {
+heatmap.quality <- function(profile, recLab = NULL, recMax = 100, scoreMax = NULL, cols = NULL, ...) {
   stopifnot(is.datadict.profile(profile))
   stopifnot(nrow(profile$data) <= 300)
   
-  if(is.null(cols)){
-    cols <- colorRampPalette(c("white", "darkgreen"))(max(profile$scores))  
+  if (is.null(cols)) {
+    cols <- colorRampPalette(c("white", "darkgreen"))(max(profile$scores))
   }
   
   
-  db = with(profile, {
+  db <- with(profile, {
     scores[1:(nrow(scores) - 2), ]
   })
   
   if (!is.null(recLab)) {
-    rownames(db) = profile$data[, recLab]
+    rownames(db) <- profile$data[, recLab]
   }
   
   if (!is.null(scoreMax)) {
-    db = db[db[, ncol(db)] <= scoreMax, ]
+    db <- db[db[, ncol(db)] <= scoreMax, ]
   }
   
-  db = db[, 1:(ncol(db) - 1)]
-  db = as.matrix(db)
+  db <- db[, 1:(ncol(db) - 1)]
+  db <- as.matrix(db)
   
-  rm = min(nrow(db), recMax)
-  db = db[1:rm, ]
+  rm <- min(nrow(db), recMax)
+  db <- db[1:rm, ]
   
   if (is.matrix(db)) {
-    heatmap(db, col=cols, ...)
+    heatmap(db, col = cols, ...)
   }
   
 }
@@ -540,16 +540,16 @@ heatmap.quality = function(profile, recLab = NULL, recMax = 100, scoreMax = NULL
 ruleCoverage <- function(profile, rLowest = 1, rLow = 2, rOk = 3, rMax = 10) {
   stopifnot(is.datadict.profile(profile))
   
-  rc = profile$scores[nrow(profile$scores), 1:(ncol(profile$scores) - 1)]
-  rc = as.data.frame(t(rc))
-  ix = order(rc[, 1])
-  x = rc[ix, ]
+  rc <- profile$scores[nrow(profile$scores), 1:(ncol(profile$scores) - 1)]
+  rc <- as.data.frame(t(rc))
+  ix <- order(rc[, 1])
+  x <- rc[ix, ]
   
-  avg = round(mean(rc[, 1]), 1)
-  x = c(x, avg)
+  avg <- round(mean(rc[, 1]), 1)
+  x <- c(x, avg)
   
-  rn = rownames(rc)[ix]
-  rn = c(rn, "Average rules")
+  rn <- rownames(rc)[ix]
+  rn <- c(rn, "Average rules")
   
   dotchart(x, labels = rn, pch = 20, main = "Rules per variable", xlim = c(0, rMax))
   abline(v = rOk, col = "darkgreen")
@@ -570,11 +570,11 @@ ruleCoverage <- function(profile, rLowest = 1, rLow = 2, rOk = 3, rMax = 10) {
 #' @export
 scoreSum <- function(profile) {
   stopifnot(is.datadict.profile(profile))
-  tt = table(profile$scores$Record.score)
-  xx = as.data.frame(cumsum(tt))
-  dt = cbind(as.integer(rownames(xx)), xx)
-  dt = dt[-nrow(dt), ]
-  names(dt) = c("Rule score", "Cumulative sum")
+  tt <- table(profile$scores$Record.score)
+  xx <- as.data.frame(cumsum(tt))
+  dt <- cbind(as.integer(rownames(xx)), xx)
+  dt <- dt[-nrow(dt), ]
+  names(dt) <- c("Rule score", "Cumulative sum")
   if (is.data.frame(dt) & nrow(dt) > 1) {
     plot(dt, type = "l")
   }
@@ -594,34 +594,34 @@ scoreSum <- function(profile) {
 shortSummary <- function(atable) {
   stopifnot(is.data.frame(atable))
   
-  ss = describe(atable)
-  nm = names(ss)
+  ss <- describe(atable)
+  nm <- names(ss)
   
-  hd = c("n", "missing", "unique", "value", "min", "max", "Mean", "sd", ".05", ".10", ".25", ".50", ".75", ".90", 
-         ".95")
-  dt = as.data.frame(matrix("", nrow = length(nm), ncol = length(hd)), stringsAsFactors = FALSE)
-  names(dt) = hd
-  rownames(dt) = nm
+  hd <- c("n", "missing", "unique", "value", "min", "max", "Mean", "sd", ".05", ".10", ".25", ".50", 
+    ".75", ".90", ".95")
+  dt <- as.data.frame(matrix("", nrow = length(nm), ncol = length(hd)), stringsAsFactors = FALSE)
+  names(dt) <- hd
+  rownames(dt) <- nm
   for (i in 1:length(nm)) {
-    an = nm[i]
-    ar = ss[[an]]$counts
-    ac = names(ar)
-    #dt[an, ac] = ar
-    rdx = which(row.names(dt)==an)
-    for(k in 1:length(ar)){
-      if( names(ar)[k] %in% names(dt)){
-        dt[rdx, names(ar[k])] = ar[k]  
+    an <- nm[i]
+    ar <- ss[[an]]$counts
+    ac <- names(ar)
+    # dt[an, ac] = ar
+    rdx <- which(row.names(dt) == an)
+    for (k in 1:length(ar)) {
+      if (names(ar)[k] %in% names(dt)) {
+        dt[rdx, names(ar[k])] <- ar[k]
       }
       
     }
     
     if (is.numeric(atable[[an]])) {
-      amin = min(atable[[an]], na.rm = T)
-      amax = max(atable[[an]], na.rm = T)
-      asd = round(sd(atable[[an]], na.rm = T), 2)
-      dt[an, "min"] = amin
-      dt[an, "max"] = amax
-      dt[an, "sd"] = asd
+      amin <- min(atable[[an]], na.rm = T)
+      amax <- max(atable[[an]], na.rm = T)
+      asd <- round(sd(atable[[an]], na.rm = T), 2)
+      dt[an, "min"] <- amin
+      dt[an, "max"] <- amax
+      dt[an, "sd"] <- asd
     }
     
   }
@@ -640,4 +640,5 @@ shortSummary <- function(atable) {
 #' @export
 runDatacheck <- function(port = 1971L) {
   shiny::runApp(system.file("www", package = "datacheck"), port = port)
-} 
+}
+

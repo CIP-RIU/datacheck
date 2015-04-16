@@ -20,9 +20,9 @@ boolean TRUE if detects anything
 Tests if a numeric value is between a minimal and maximum value. Serves as convenience function.
 }
 \examples{
-is.withinRange(1,0,2) == TRUE
+is.withinRange(1, 0, 2) == TRUE
 
-is.withinRange(-1,0,2) == FALSE
+is.withinRange(-1, 0, 2) == FALSE 
 }
 \author{
 Reinhard Simon

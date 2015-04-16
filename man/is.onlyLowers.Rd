@@ -19,8 +19,7 @@ Tests if a string has only lower case letters
 is.onlyLowers("example") == TRUE
 
 is.onlyLowers("Example") == FALSE
-
-
+ 
 }
 \author{
 Reinhard Simon

@@ -18,26 +18,26 @@ Is this a datadict.profile object
 \examples{
 
 # Get example data files
-atable = system.file("examples/db.csv", package='datacheck')
-arule  = system.file("examples/rules1.R", package='datacheck')
-aloctn = system.file("examples/location.csv", package='datacheck') # for use in is.oneOf
+atable <- system.file("examples/db.csv", package = "datacheck")
+arule <- system.file("examples/rules1.R", package = "datacheck")
+aloctn <- system.file("examples/location.csv", package = "datacheck")  # for use in is.oneOf
 
-ctable = basename(atable)
-crule  = basename(arule)
-cloctn = basename(aloctn)
+ctable <- basename(atable)
+crule <- basename(arule)
+cloctn <- basename(aloctn)
 
-cwd = tempdir()
-owd = getwd()
+cwd <- tempdir()
+owd <- getwd()
 setwd(cwd)
 
 file.copy(atable, ctable)
-file.copy(arule,  crule)
+file.copy(arule, crule)
 file.copy(aloctn, cloctn)
 
-at = read.csv(ctable, stringsAsFactors = FALSE)
-ad = read.rules(crule)
+at <- read.csv(ctable, stringsAsFactors = FALSE)
+ad <- read.rules(crule)
 
-db = datadict.profile(at, ad)
+db <- datadict.profile(at, ad)
 
 is.datadict.profile(db) == TRUE
 
@@ -45,6 +45,10 @@ db
 
 setwd(owd)
 
+TRUE
+TRUE
+TRUE
+TRUE 
 }
 \author{
 Reinhard Simon

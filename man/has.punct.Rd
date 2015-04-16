@@ -18,7 +18,7 @@ These include: .?'!_#$^&*()+=<>,;' - and [tab] and [at]
 }
 \examples{
 
-has.punct(".") == TRUE
+has.punct(".") == TRUE 
 }
 \author{
 Reinhard Simon

@@ -1,2 +1,2 @@
 
-has.punct(".") == TRUE
+has.punct(".") == TRUE 
