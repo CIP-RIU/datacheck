@@ -29,6 +29,16 @@ http://cran.r-project.org/web/licenses/MIT
 
   Done!
  
+## Submission of version 1.2.1
+### Addressed comments from CRAN maintainer
+
+* checking files in ‘vignettes’ ... NOTE The following directory looks like a leftover from 'knitr':
+  ‘figure’
+Please remove from your package.
+
+  Done!
+
+
 
 ## Downstream dependencies
 There were no downstream dependencies.
