@@ -1,5 +1,5 @@
 ---
-title: "Release note: datacheck 1.2.0"
+title: "Release note: datacheck 1.2.1"
 author: "Reinhard Simon"
 date: "Thursday, April 16th, 2015"
 output: pdf_document
