@@ -1,7 +1,7 @@
 ---
-title: "Release note: datacheck 1.2.1"
+title: "Release note: datacheck 1.2.2"
 author: "Reinhard Simon"
-date: "Thursday, April 16th, 2015"
+date: "Friday, April 17th, 2015"
 output: pdf_document
 ---
 
@@ -36,6 +36,11 @@ The link to the online demo has been removed since that server is being decommis
 Bug fixes
 --------
 * Non-existent or empty rule files are not accepted any more by read_rules.
+
+Acknowledgements
+-----------
+
+Thanks to Jose Francisco Loff for contributing improvements.
 
 
 Download & source code

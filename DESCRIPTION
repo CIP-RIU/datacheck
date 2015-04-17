@@ -1,10 +1,10 @@
 Package: datacheck
 Type: Package
 Title: Tools for Checking Data Consistency
-Version: 1.2.1
+Version: 1.2.2
 Date: 2015-04-16
 Maintainer: "Simon, Reinhard (CIP)" <R.SIMON@CGIAR.ORG>
-Author: "Simon, Reinhard (CIP)" <R.SIMON@CGIAR.ORG>, Zé Loff
+Author: "Simon, Reinhard (CIP)" <R.SIMON@CGIAR.ORG>, Jose Francisco Loff <jfloff at phistat.com>
 Copyright: International Potato Center (CIP)
 License: MIT + file LICENSE
 URL: https://github.com/c5sire/datacheck

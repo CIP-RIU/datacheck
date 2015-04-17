@@ -76,7 +76,7 @@ has_punct <- function(s) {
 #'
 #' @aliases is.properName
 #' @param aname a character string
-#' @author Reinhard Simon, Zé Loff
+#' @author Reinhard Simon, Jose Francisco Loff
 #' @return boolean TRUE if ok
 #' @family rule_checks
 #' @example inst/examples/is_properName.R
@@ -92,7 +92,7 @@ is.properName <- function(aname) {
 #'
 #' @aliases is_proper_name
 #' @param aname a character string
-#' @author Reinhard Simon, Zé Loff
+#' @author Reinhard Simon, Jose Francisco Loff
 #' @return boolean TRUE if ok
 #' @family rule_checks
 #' @example inst/examples/is_properName.R
@@ -154,7 +154,7 @@ is_only_lowers <- function(s) {
 #' @aliases is.oneOf
 #' @param x a factor level as character string
 #' @param aset a vector of character strings or a path to a custom file (full pathname where necessary)
-#' @author Reinhard Simon, Zé Loff
+#' @author Reinhard Simon, Jose Francisco Loff
 #' @return boolean TRUE if detects anything
 #' @family rule_checks
 #' @export
@@ -198,7 +198,7 @@ is.oneOf <- function(x, aset) {
 #' @aliases is_one_of
 #' @param x a factor level as character string
 #' @param aset a vector of character strings or a path to a custom file (full pathname where necessary)
-#' @author Reinhard Simon, Zé Loff
+#' @author Reinhard Simon, Jose Francisco Loff
 #' @return boolean TRUE if detects anything
 #' @family rule_checks
 #' @export
