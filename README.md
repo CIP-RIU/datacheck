@@ -1,3 +1,5 @@
+# The development and maintenance of this package has been handed over to the repository github/CIP-RIU. 
+
 [![Travis-CI Build Status](https://travis-ci.org/c5sire/datacheck.png?branch=master)](https://travis-ci.org/c5sire/datacheck)
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
