@@ -3,7 +3,7 @@ Type: Package
 Title: Tools for Checking Data Consistency
 Version: 1.2.2
 Date: 2015-04-16
-Maintainer: "Simon, Reinhard (CIP)" <R.SIMON@CGIAR.ORG>
+Maintainer: Ivan Perez <i.perez@cgiar.org>
 Author: "Simon, Reinhard (CIP)" <R.SIMON@CGIAR.ORG>, Jose Francisco Loff <jfloff at phistat.com>
 Copyright: International Potato Center (CIP)
 License: MIT + file LICENSE
